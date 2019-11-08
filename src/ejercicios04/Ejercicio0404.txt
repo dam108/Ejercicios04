@@ -1,0 +1,30 @@
+Suponiendo que contamos con el 0 y con el 1 para empezar la serie tenemos que restar dos al contador 
+
+/* ERRONEO */
+
+package ejercicios;
+public class Ejercicios {
+public static void main(String[] args) {
+int ant=1, ant2=0, num;
+for (int i=1; i<=12; i++){ // EL CONTADOR LLEGA HASTA 12 TENEMOS QUE RESTAR 2 NUMEROS 
+num = ant + ant2;
+System.out.println(num);
+ant = num; ant2 = ant; // SI DEJAMOS ESTO DE ESTA MANERA ANT SE SOBRESCRIBE CON NUM Y ANT2 CON ANT SIENDO ESTA NUM
+}
+}}
+
+/* CORRECTO */
+
+package ejercicios;
+public class Ejercicios {
+public static void main(String[] args) {
+int ant = 1, ant2 = 0, num;
+        System.out.println(0); // imrimimos los dos primeros numeros 
+        System.out.println(1); // el 0 y el 1
+        for (int i = 1; i <=10 ; i++){ // como ya tenemos dos numeros y queremos llegar hasta los 12 primeros el for llega hasta 10
+            num = ant + ant2; 
+            System.out.println(num);
+            ant2 = ant; ant = num; // guardamos los datos de ant en ant2 y los de num en ant de esta manera conservamos los dos numeros anteriores para la siguiente vuelta
+        }
+    }
+}
